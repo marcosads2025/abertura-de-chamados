@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.management.relation.Role;
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name="usuarios")
 @Getter
@@ -21,6 +24,21 @@ public class Usuario {
 
     private String nome;
 
+    @Column(unique = true)
     private String email;
 
+    private String senha;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    private Boolean ativo;
+    private LocalDateTime dataCadastro;
+
+    @PrePersist
+    public void criarData(){
+        dataCadastro = LocalDateTime.now();
+
+                ativo = true;
+    }
 }
