@@ -41,4 +41,7 @@ public class Usuario {
 
                 ativo = true;
     }
+
+    public void setRole(com.eventoapp.abertura_de_chamados.unums.Role role) {
+    }
 }
