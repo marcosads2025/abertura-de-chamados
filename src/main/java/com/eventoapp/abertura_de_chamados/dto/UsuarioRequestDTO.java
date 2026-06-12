@@ -7,6 +7,7 @@ public class UsuarioRequestDTO {
 
     private String nome;
     private String email;
+    private String senha;
 
     // Construtor vazio (mantido)
     public UsuarioRequestDTO() {
@@ -16,6 +17,7 @@ public class UsuarioRequestDTO {
     public UsuarioRequestDTO(Usuario usuario) {
         this.nome = usuario.getNome();
         this.email = usuario.getEmail();
+        this.senha = usuario.getSenha();
     }
 
     public String getNome() {
@@ -32,5 +34,8 @@ public class UsuarioRequestDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getSenha() {
+        return senha;
     }
 }
