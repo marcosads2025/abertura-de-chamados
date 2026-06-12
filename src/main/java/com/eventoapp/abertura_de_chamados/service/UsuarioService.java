@@ -3,6 +3,7 @@ package com.eventoapp.abertura_de_chamados.service;
 import com.eventoapp.abertura_de_chamados.dto.UsuarioRequestDTO;
 import com.eventoapp.abertura_de_chamados.entity.Usuario;
 import com.eventoapp.abertura_de_chamados.repository.UsuarioRepository;
+import com.eventoapp.abertura_de_chamados.unums.Role;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +23,9 @@ public class UsuarioService {
 
         usuario.setNome(dto.getNome());
         usuario.setEmail(dto.getEmail());
+        usuario.setSenha(dto.getSenha());
+        usuario.setRole(Role.USUARIO);
+
 
         return repository.save(usuario);
     }
